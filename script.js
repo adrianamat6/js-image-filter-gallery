@@ -64,9 +64,9 @@ nodoBotonAgua.addEventListener( 'click' , function(){
 let contador = 1; 
 nodoBotonTodos.addEventListener( 'click' , function(){
     if (contador %2 != 0){
-        ocultar_todos()
-    }else{
         mostrar_todos()
+    }else{
+        ocultar_todos()
     };
     contador += 1
 } );
@@ -99,5 +99,17 @@ function ocultar_todos(){
     for (let imagenes of nodoImagenAgua){
         imagenes.style.display = 'none';
     }
+}
+
+
+
+
+// PARTE 2 -  Pop up maquetado 
+const nodoImagenClick = document.querySelectorAll('.imagen'); 
+
+for(let nodoImagen of nodoImagenClick){
+    nodoImagen.addEventListener( 'click', function(){
+    nodoImagen.classList.add( 'overlay' )
+    }) 
 }
 
